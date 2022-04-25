@@ -1,5 +1,29 @@
 <?php require 'inc/data/products.php'; ?>
 <?php require 'inc/head.php'; ?>
+
+<?php
+if (!empty($_SESSION['login'])) {
+
+    // jenny
+    // if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    //     if ($_SESSION['articles'][$_GET['add_to_cart']]) {
+    //         $_SESSION['articles'][$_GET['add_to_cart']] ++;
+    //     } else {
+    //         $_SESSION['articles'][$_GET['add_to_cart']] = 1;
+    //     }
+    // }
+
+    // moi
+    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+            $_SESSION['articles'] = $_GET;
+    }
+
+}
+
+    
+
+?>
+
 <section class="cookies container-fluid">
     <div class="row">
         <?php foreach ($catalog as $id => $cookie) { ?>
